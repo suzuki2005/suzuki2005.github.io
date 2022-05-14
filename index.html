@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <title><quetzal class="com">quetzal.com</title>
+  <meta name="description" content="フロントエンドエンジニアのquetzal（ケツァール）の公式サイトです。">
+  <script src="./js/toggle-menu.js"></script>
+  <style>
+
+/* common */
+@charset "utf-8";
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+  color: #000000;
+  line-height: 1;
+  background-color: #ffffff;
+}
+img {
+  max-width: 100%;
+}
+.logo0 {
+  height: 110px;
+}
+
+.header-inner {
+  max-width: 1200px;
+  height: 110px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 48px;
+  padding-right: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.toggle-menu-button {
+  display: none;
+}
+.header-logo {
+  display: block;
+  width: 170px;
+}
+.site-menu ul {
+  display: flex;
+}
+.site-menu ul li {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+footer {
+  color: #ffffff;
+  background-color: #b3b3b3;
+  padding-top: 30px;
+  padding-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer-logo {
+  display: block;
+  width: 225px;
+  margin-top: 28px;
+}
+.footer-time {
+  font-size: 13px;
+  margin-top: 16px;
+}
+.footer-tel {
+  margin-top: 50px;
+}
+.copyright {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 90px;
+}
+@media (max-width: 800px) {
+  .site-menu ul {
+    display: block;
+    text-align: center;
+  }
+  .site-menu li {
+    margin-top: 20px;
+  }
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0%;
+    background-color: #ffffff;
+    height: 50px;
+    z-index: 10;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  }
+  .header-inner {
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 100%;
+    position: relative;
+  }
+  .header-logo {
+    width: 100px;
+  }
+
+
+
+
+
+
+  .headersitemenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    color: #ffffff;
+    background-color: #b3b3b3;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    display: none;
+  }
+
+
+  .headersitemenu.show {
+    display: block;
+  }
+
+
+
+  .toggle-menu-button {
+    display: block;
+    width: 44px;
+    height: 34px;
+    /* background-image: url(../img/bars_24.svg); */
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    cursor: pointer;
+  }
+  .main  {
+    padding-top: 50px;
+  }
+  .footer-logo {
+    margin-top: 60px;
+  }
+  .footer-tel {
+    font-size: 20px;
+  }
+  .copyright {
+    margin-top: 50px;
+  }
+}
+@media (max-width: 800px) {
+  .logo0 {
+    height: 50px;
+  }
+}
+.first-view {
+  height: calc(100vh - 110px);
+  background-image: url(./img/first-view.jpeg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+
+}
+.first-view-text {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+  padding-bottom: 80px;
+  color: #ffffff;
+  font-weight: bold;
+  text-shadow: 1px 1px 10px skyblue;
+}
+.first-view-text h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 56px;
+  line-height: 72px;
+}
+.lead {
+  max-width: 1200px;
+  margin: 60px auto;
+}
+.lead p {
+  line-height: 2;
+  text-align: center;
+}
+.link-button-area {
+  text-align: center;
+  margin-top: 40px;
+}
+.link-button {
+  background-color: aqua;
+  display: inline-block;
+  min-width: 180px;
+  line-height: 48px;
+  border-radius: 24px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+} 
+.link-button:hover {
+  background-color: skyblue;
+}
+.recommend {
+  background-color: #f8f8f8;
+  padding-top: 45px;
+  padding-bottom: 55px;
+}
+.recommend h2 {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+.recommend h2::after {
+  content: '';
+  display: block;
+  width: 36px;
+  height: 3px;
+  background-color: #000000;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.item-list {
+  display: flex;
+  padding-top: 40px;
+  padding-bottom: 10px;
+  padding-left: 60px;
+  padding-right: 60px;
+  overflow: scroll;
+}
+.item-list li {
+  flex-shrink: 0;
+  width: 260px;
+  margin-left: 75px;
+}
+.item-list li:first-child {
+  margin-left: 0;
+}
+.item-list dl {
+  margin-top: 20px;
+}
+.item-list dt {
+  font-weight: bold;
+}
+.item-list dd {
+  font-size: 13px;
+  line-height: 20px;
+  margin-top: 10px;
+}
+/* .item-list .price {
+  font-weight: bold;
+  margin-top: 15px;
+} */
+@media (max-width: 800px) {
+  .logo0 {
+    height: 50px;
+  }
+  .first-view{
+    height: calc(100vh - 50px);
+    align-items: flex-start;
+  }
+  .first-view-text {
+    padding-top: 20px;
+    padding-left: 20px;
+  }
+  .first-view-text h1 {
+    font-size: 24px;
+    line-height: 48px;
+  }
+  .first-view-text p {
+    font-size: 10px;
+    margin-top: 15px;
+  }
+  .lead {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .lead p {
+    text-align: left;
+  }
+  .item-list {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .item-list li {
+    width: 220PX;
+    margin-left: 30px;
+  }
+}
+  </style>
+</head>
+
+<body>
+
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="img/logoful.png" alt="logo" class="logo0">
+      </a>
+      <button class="toggle-menu-button"><img src="./img/bars_24.svg" width="40px" id="open"></button>
+      <div class="headersitemenu">
+      <nav class="site-menu">
+        <ul>
+          <li><a href="./about.html">about us</a></li>
+          <li><a href="./menu.html">menu</a></li>
+          <li><a href="./contact.html">contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <main class="main">
+
+    <div class="first-view">
+      <div class="first-view-text">
+        <h1>Leave it to me.<br>I can assure you that everything will turn out fine.</h1>
+        <p>小さな成果を最速で</p>
+      </div>
+    </div>
+    <div class="lead">
+      <p>同じものなら最速で。<br>時間に追われる中で、web制作に時間をかけれない方へ。<br>最速でお作りします。</p>
+      <div class="link-button-area">
+        <a class="link-button" href="./about.html">about us</a>
+      </div>
+    </div>
+
+    <div class="recommend">
+      <h2>WORKS</h2>
+      <ul class="item-list">
+
+      <li>
+        <a href="" class="work1">
+          <img src="./img/work-a.jpeg" alt="特徴" width="300px">
+          <dl>
+            <dt>explain</dt>
+            <dd>テキストテキストテキストテキストテキストテキストテキストテキスト</dd>
+          </dl>
+          <p class="price">作成中</p> 
+      </a>
+      </li>
+        
+
+      <li>
+        <a href="" class="work2">
+           <img src="./img/work-b.jpeg" alt="特徴" width="300px">
+           <dl>
+            <dt>explain</dt>
+            <dd>テキストテキストテキストテキストテキストテキストテキストテキスト</dd>
+          </dl>
+          <p class="price">作成中</p>
+        </a>       
+      </li>
+
+        <li>
+          <a href="" class="work3">
+            <img src="./img/work-c.jpeg" alt="特徴" width="300px">
+            <dl>
+              <dt>explain</dt>
+              <dd>テキストテキストテキストテキストテキストテキストテキストテキスト</dd>
+            </dl>
+            <p class="price">作成中</p>
+          </a>         
+      </li>
+
+        <li>
+          <a href="" class="work4">
+            <img src="./img/work-d.jpeg" alt="特徴" width="300px">
+          <dl>
+            <dt>explain</dt>
+            <dd>テキストテキストテキストテキストテキストテキストテキストテキスト</dd>
+          </dl>
+            <p class="price">作成中</p>
+          </a>
+        </li>
+
+        <li>
+          <a href="" class="work5">
+             <img src="./img/work-e.jpeg" alt="特徴" width="300px">
+          <dl>
+            <dt>explain</dt>
+            <dd>テキストテキストテキストテキストテキストテキストテキストテキスト</dd>
+          </dl>
+            <p class="price">作成中</p>
+          </a>        
+        </li>
+
+    </ul>
+    <div class="link-button-area">
+      <a class="link-button" href="./contact.html">contact</a>
+    </div>
+    </div>
+  </main>
+
+
+  <footer class="footer">
+    <nav class="site-menu">
+      <ul>
+        <li><a href="./about.html">about us</a></li>
+        <li><a href="./menu.html">menu</a></li>
+        <li><a href="./contact.html">contact</a></li>
+        <li><a href="./index.html">top</a></li>
+      </ul>
+    </nav>
+    <a href="index.html" class="footer-logo">
+      <img src="img/logofooter.png" alt="logo">
+    </a>
+    <p class="footer-tel">TEL 070-1120-2030</p>
+    <p class="footer-time">17:00~20:00</p>
+    <p class="copyright"><small>(c)quetzal.com</small></p>
+  </footer>
+
+
+</body>
+
+</html>
